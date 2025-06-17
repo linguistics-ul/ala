@@ -1,4 +1,4 @@
-### ALA (Automated Language Analysis)
+## ALA (Automated Language Analysis)
 
 This repository contains a module and some scripts for Automated Language Analysis (ALA), primarily focused on the Slovenian language. However, much of its functionality can be directly applied to other languages as well.
 
@@ -7,6 +7,12 @@ The repository is not optimized for speed but tries to be accessible to linguist
 The module is `ala.py`.
 
 An usage example is in `ccKresExample.py` (see [ccKresExample.md](ccKresExample.md))
+
+---
+## Authors  
+
+Tatjana Marvin Derganc, Department of Comparative and General Linguistics, Faculty of Arts, University of Ljubljana  
+Jure Derganc, Institute of Biophysics, Faculty of Medicine, University of Ljubljana
 
 ---
 

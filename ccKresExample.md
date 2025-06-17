@@ -57,7 +57,7 @@ ala.classla(
 )
 ```
 
-The function `ala.classla` performes lemmatization, part-of-speech (POS) tagging and annotation of universal dependencies (UD) relations. The output will be saved as `.xlsx` files in `ccKresExample/cckresV1_0_Classla`. The xlsx files will contain columns "word", "lemma", "pos" and "deprel"
+The function `ala.classla` performes lemmatization, part-of-speech (POS) tagging and annotation of universal dependencies (UD) relations. The output will be saved as `.xlsx` files in `ccKresExample/cckresV1_0_Classla`. The xlsx files will contain columns "word", "lemma", "pos" and "deprel".
 
 **References:**
 - [Classla GitHub Repository](https://github.com/clarinsi/classla)
