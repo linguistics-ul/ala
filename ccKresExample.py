@@ -35,7 +35,7 @@ ala.analyze_classla_xlsx(classla_folder,root_folder)
 # next perform some more analysis and plot the results and save them in the root_folder
 
 # first we'll import all analyzed results into one dataframe for subsequent TTR analysis
-df=ala.import_classla_xlsx_to_dataframe("classla_folder")
+df=ala.import_classla_xlsx_to_dataframe(classla_folder)
 
 # next we'll plot windowed TTR for words and lemmas
 window=500
@@ -58,8 +58,8 @@ plt.xlim(0,1)
 plt.ylim(0,1)
 plt.grid(True, which="both", linestyle="--", linewidth=0.5)
 plt.legend()
-plt.show()
 plt.savefig(os.path.join(root_folder,"wTTR_for_words_and_lemmas.png"))
+plt.show()
 
 # next we'll plot how mean_wTTR_lemmas and std_wTTR_lemmas change with window size
 windows = list(range(50, 1001, 50))
@@ -79,5 +79,5 @@ plt.xlabel("window width")
 plt.ylabel("TTR")
 plt.title("lemmas")
 plt.legend()
+plt.savefig(os.path.join(root_folder,"wTTR_for_lemmas_vs_window_size.png"))
 plt.show()
-plt.savefig(os.path.join(root_folder,"wTTR_for_words_and_lemmas.png"))

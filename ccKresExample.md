@@ -12,7 +12,7 @@ This example script demonstrates how to use `ala.py` to analyze the Type-Token R
 2. Download `ccKresAnalysisExample.py` and the module `ala.py` into this folder.
 3. Download the XML version of the Kres corpus (`cckresV1_0.zip`) from the [CLARIN.SI repository](https://www.clarin.si/repository/xmlui/handle/11356/1034) and extract it into `ccKresExample/cckresV1_0`.
 
-    **Note:** A small portion of the corpus ccKres is already included in the `example` folder.
+    **Note:** A small portion of the corpus ccKres is already included in the `ccKresExample.zip` file in this repository.
 
 ---
 
@@ -73,3 +73,4 @@ The function `ala.classla` performes lemmatization, part-of-speech (POS) tagging
 - Plot TTR variation across the corpus.
 - Calculate mean and standard deviation of TTR.
 
+**Note:** Results of this analysis are in the `ccKresExample.zip` file in this repository.
