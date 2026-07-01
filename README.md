@@ -9,8 +9,8 @@ Modules are:
  - `module_syntactic_measures_t2024.py` (functions copied from [Terčon 2024](https://github.com/lukatercon/SyntComplex))
 
  Examples are:
-- `Example_ccKres.py` (how to use Classla annotation to analyze ccKres corpus, see [Example_ccKres.md](ccKresExample.md)) 
-- `Example_ccKres.py` (how to count clauses in sentences)
+- `Example_ccKres.py` (how to use Classla annotation to analyze ccKres corpus, see [Example_ccKres.md](Example_ccKres.md)) 
+- `Example_CountClauses.py` (how to count clauses in sentences)
 
 ---
 ## Authors  
