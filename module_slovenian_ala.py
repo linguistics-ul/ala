@@ -255,15 +255,48 @@ def wTTR_with_SD(text_string: str, window_width: int = 500, downsampled_length: 
     downsampled_list=average_downsample(wTTR_list)
     return mean_TTR, std_TTR, downsampled_list
 
-def clauses_in_sent(sentence) -> int: 
+def clauses_in_sent_MDD1(sentence) -> int: 
     # calculates number of clauses according to Marvin Derganc & Derganc 2026
     # sentence should be of type "conllu sentence object", i.e., list[dict[str, str]]
+    # the method takes into accound dependency relations
     clauses_counter = 0
     for tok in sentence:
         if (tok["upos"]=="AUX"  and tok["deprel"]=="cop") or \
            (tok["upos"]=="VERB" and tok["deprel"]!="xcomp"):
             clauses_counter += 1
     return clauses_counter    
+
+
+def clauses_in_sent_MDD2(sentence):
+    # calculates number of clauses according to Marvin Derganc & Derganc 2026
+    # sentence should be of type "conllu sentence object", i.e., list[dict[str, str]]
+    # the method does not take into accound dependency relations    
+    def is_verb_but_not_inf_or_sup(tok):
+        feats = tok.get("feats")
+    
+        if isinstance(feats, dict):
+            verb_form = feats.get("VerbForm")
+        elif isinstance(feats, str):
+            # fallback if feats is stored as a string like "VerbForm=Inf|..."
+            verb_form = None
+            for part in feats.split("|"):
+                if part.startswith("VerbForm="):
+                    verb_form = part.split("=", 1)[1]
+                    break
+        else:
+            verb_form = None
+    
+        return (
+            tok.get("upos") == "VERB"
+            and verb_form not in {"Inf", "Sup"}
+        )
+    
+    clauses_counter = 0
+    for tok in sentence:
+        if (tok["upos"]=="AUX"  and tok["deprel"]=="cop") or is_verb_but_not_inf_or_sup(tok):         
+            clauses_counter += 1
+    return clauses_counter    
+
 
 
 

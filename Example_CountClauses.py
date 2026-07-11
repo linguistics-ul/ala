@@ -56,8 +56,9 @@ def primerjava_analiz(input_text:str)->str:
     output_text=""
     for sent in sentences:
             cisTercon=t2024.clauses_in_sent(sent)
-            cisTMD=si_ala.clauses_in_sent(sent)
-            cis_result = "Terčon:"+ str(cisTercon)+"  TMD:"+str(cisTMD)+ "\n"
+            cisMDD1=si_ala.clauses_in_sent_MDD1(sent)
+            cisMDD2=si_ala.clauses_in_sent_MDD2(sent)
+            cis_result = "Terčon:"+ str(cisTercon)+"  MDD1:"+str(cisMDD1)+"  MDD2:"+str(cisMDD2)+ "\n"
             output_text = output_text + cis_result 
             output_text = output_text + three_line_aligned_wrapped(sent,80)+ "\n"+ "--------------------------------------\n" + "\n"  
             
@@ -67,6 +68,6 @@ def primerjava_analiz(input_text:str)->str:
 classla.download('sl')                            # download standard models for Slovenian, use hr for Croatian, sr for Serbian, bg for Bulgarian, mk for Macedonian
 nlp = classla.Pipeline('sl') 
 
-moj_tekst="To rekoč, so se otroci odpravili proti igrišču. Jaz pa sem jih le gledal."  
+moj_tekst="To rekoč, so se otroci odpravili proti igrišču. Janez je ukazal metki oprati avto. Kaditi na balkonu je dovoljeno."  
 rezultat=primerjava_analiz(moj_tekst)
 print(rezultat)
